@@ -2,50 +2,47 @@ autoload colors && colors
 # cheers, @ehrenmurdick
 # http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
 
-git_branch() {
-  echo $(/usr/bin/git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
-}
+GIT="/usr/bin/git"
 
-git_dirty() {
-  st=$(/usr/bin/git status 2>/dev/null | tail -n 1)
+git_info() {
+  st=$($GIT status 2>/dev/null | tail -n 1)
   if [[ $st == "" ]]
   then
     echo ""
   else
     if [[ $st == "nothing to commit (working directory clean)" ]]
     then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
+      COLOR=green
     else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
+      COLOR=red
     fi
+    echo "[%{$fg_bold[$COLOR]%}$(git_branch)%{$reset_color%}$(need_push)]"
   fi
 }
 
-git_prompt_info () {
- ref=$(/usr/bin/git symbolic-ref HEAD 2>/dev/null) || return
-# echo "(%{\e[0;33m%}${ref#refs/heads/}%{\e[0m%})"
+git_branch () {
+ ref=$($GIT symbolic-ref HEAD 2>/dev/null) || return
  echo "${ref#refs/heads/}"
 }
 
 unpushed () {
-  /usr/bin/git cherry -v @{upstream} 2>/dev/null
+  $GIT cherry -v @{upstream} 2>/dev/null | wc -l
 }
 
 need_push () {
-  if [[ $(unpushed) == "" ]]
+  COUNT=${$(unpushed)// /}
+  if [[ $COUNT -gt 0 ]]
   then
-    echo " "
-  else
-    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
+    echo "%{$fg_bold[magenta]%}+$COUNT%{$reset_color%}"
   fi
 }
 
 rb_prompt(){
   if $(which rbenv &> /dev/null)
   then
-	  echo "%{$fg_bold[yellow]%}$(rbenv version | awk '{print $1}')%{$reset_color%}"
-	else
-	  echo ""
+    echo "%{$fg_bold[yellow]%}$(rbenv version | awk '{print $1}')%{$reset_color%}"
+  else
+    echo ""
   fi
 }
 
@@ -69,15 +66,30 @@ todo(){
 }
 
 directory_name(){
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+  echo "%{$fg_bold[cyan]%}%1/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rb_prompt) in $(directory_name) $(git_dirty)$(need_push)\n› '
+user_name(){
+  if [[ $USER == 'root' ]]
+  then
+    COLOR="red"
+  else
+    COLOR="yellow"
+  fi
+  echo "%{$fg[$COLOR]%}$USER%{$reset_color%}"
+}
+
+host_name(){
+  echo "%{$fg[magenta]%}$HOST%{$reset_color%}"
+}
+
+export PROMPT=$'$(directory_name) $(git_info)\$ '
 set_prompt () {
-  export RPROMPT="%{$fg_bold[cyan]%}$(todo)%{$reset_color%}"
+  export RPROMPT=$'$(user_name)@$(host_name)'
 }
 
 precmd() {
   title "zsh" "%m" "%55<...<%~"
   set_prompt
 }
+
