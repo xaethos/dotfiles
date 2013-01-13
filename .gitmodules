@@ -25,3 +25,6 @@
 [submodule "vim/vim.symlink/bundle/json"]
 	path = vim/vim.symlink/bundle/json
 	url = git://github.com/helino/vim-json.git
+[submodule "vim/vim.symlink/bundle/markdown"]
+	path = vim/vim.symlink/bundle/markdown
+	url = git://github.com/hallison/vim-markdown.git
