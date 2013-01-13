@@ -72,9 +72,6 @@ set hlsearch               " highlight searches
 
 set list listchars=tab:»\ ,trail:·
 
-match ExtraWhitespace /\s\+$/
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-
 function! StripWhitespace ()
     exec ':%s/\s\+$//gc'
 endfunction
