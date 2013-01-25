@@ -33,10 +33,11 @@ set virtualedit=block      " allow virtual edit in visual block ..
 
 
 " ----------------------------------------------------------------------------
-"  Remapping
+"  Keymapping
 " ----------------------------------------------------------------------------
 
 let mapleader = ","        " lead with ,
+nmap <C-\> :NERDTreeFind<CR>
 
 
 " ----------------------------------------------------------------------------
@@ -75,7 +76,7 @@ set list listchars=tab:»\ ,trail:·
 function! StripWhitespace ()
     exec ':%s/\s\+$//gc'
 endfunction
-map ,s :call StripWhitespace ()<CR>
+map <Leader>s :call StripWhitespace ()<CR>
 
 
 " ---------------------------------------------------------------------------
