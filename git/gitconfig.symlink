@@ -14,7 +14,7 @@
         co = checkout
         count = !git shortlog -sn
         st = status -sb
-        tree = log --graph --format='%C(black yellow)%h%Creset%C(green)% s%C(cyan)%d%n        %ai -- %an' --al
+        tree = log --graph --format='%C(black yellow)%h%Creset%C(green)% s%C(cyan)%d%n        %ai -- %an' --all
 
 [color]
         diff = auto
