@@ -38,6 +38,12 @@ set virtualedit=block      " allow virtual edit in visual block ..
 
 let mapleader = ","        " lead with ,
 nmap <C-\> :NERDTreeFind<CR>
+nmap ]q :cnext<CR>
+nmap [q :cprevious<CR>
+nmap ]l :lnext<CR>
+nmap [l :lprevious<CR>
+nmap ]b :bnext<CR>
+nmap [b :bprevious<CR>
 
 
 " ----------------------------------------------------------------------------
