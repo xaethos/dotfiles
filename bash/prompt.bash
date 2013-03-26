@@ -1,86 +1,66 @@
 GIT="/usr/bin/git"
 
-RST='\e[0m'
+__git_info() {
+  local st
 
-NONE=0
-BOLD=1
-UNLN=4
-
-FG=3
-BG=4
-
-BLK=0
-RED=1
-GRN=2
-YLW=3
-BLU=4
-MAG=5
-CYN=6
-WHT=7
-
-colorize() {
-  echo -n "\[\e[${1}m\]${2}\[${RST}\]"
-}
-
-git_info() {
   st=$($GIT status 2>/dev/null | tail -n 1)
   if [[ $st == "" ]]
   then
     echo ""
   else
-    if [[ $st == "nothing to commit (working directory clean)" ]]
-    then
-      COLOR="$BOLD;$FG$GRN"
-    else
-      COLOR="$BOLD;$FG$RED"
-    fi
-    BRANCH_NAME=$(git_branch)
-    BRANCH_INFO=$(colorize $COLOR "$BRANCH_NAME")
-    echo "[$BRANCH_INFO$(need_push)]"
+    echo "[$(__git_branch "$st")$(__git_need_push)]"
   fi
 }
 
-git_branch () {
-  ref=$($GIT symbolic-ref HEAD 2>/dev/null) || return
-  echo "${ref#refs/heads/}"
-}
+__git_branch () {
+  local color
+  local ref
 
-unpushed () {
-  WC=$($GIT cherry -v @{upstream} 2>/dev/null | wc -l)
-  echo -n ${WC// /}
-}
-
-need_push () {
-  COUNT=$(unpushed)
-  if [[ $COUNT -gt 0 ]]
+  if [[ $1 == "nothing to commit (working directory clean)" ]]
   then
-    colorize "$BOLD;$FG$MAG" "+$COUNT"
+    color='bold fg_grn'
+  else
+    color='bold fg_red'
+  fi
+
+  ref=$($GIT symbolic-ref HEAD 2>/dev/null) || return
+  colorize "$color" "${ref#refs/heads/}"
+}
+
+__git_need_push () {
+  local count
+
+  count=$($GIT cherry -v @{upstream} 2>/dev/null | wc -l)
+  count=${count// /}
+
+  if [[ $count -gt 0 ]]
+  then
+    colorize 'bold fg_mag' "+$count"
   fi
 }
 
-directory_name(){
-  colorize "$BOLD;$FG$CYN" "$(basename "$PWD")"
-}
+__user_name(){
+  local color
 
-user_name(){
   if [[ $USER == 'root' ]]
   then
-    COLOR="$FG$RED"
+    color='fg_red'
   else
-    COLOR="$FG$YLW"
+    color='fg_ylw'
   fi
-  colorize $COLOR $USER
+  colorize $color $USER
 }
 
-host_name(){
-  colorize "$FG$MAG" $HOSTNAME
+__host_name(){
+  colorize 'fg_mag' $HOSTNAME
 }
 
-prompt_cmd() {
-  export PS1="$(user_name)@$(host_name):$(directory_name) $(git_info)\$ "
+__directory_name(){
+  colorize 'bold fg_cyn' "$(basename "$PWD")"
+}
+__prompt_cmd() {
+  export PS1="$(__user_name)@$(__host_name):$(__directory_name) $(__git_info)\$ "
 }
 
-export PROMPT_COMMAND=prompt_cmd
-
-#export PS1='\[\e[0;36m\]yay=$ \[\e[0m\]'
+export PROMPT_COMMAND=__prompt_cmd
 
