@@ -1,0 +1,19 @@
+# shortcut to this dotfiles path is $ZSH
+export ZSH=$HOME/.dotfiles
+
+# your project folder that we can `c [tab]` to
+export PROJECTS=~/workspace
+
+# source every .sh and .bash file in this rep
+for config_file in $(find "$DOTHOME/" -regex '.*\.\(ba\)?sh$')
+do
+  source $config_file
+done
+
+# use .localrc for SUPER SECRET CRAP that you don't
+# want in your public, versioned repo.
+if [[ -a $HOME/.localrc ]]
+then
+  source $HOME/.localrc
+fi
+
