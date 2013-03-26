@@ -19,7 +19,7 @@ CYN=6
 WHT=7
 
 colorize() {
-  echo -n "\[\e[${1}m${2}${RST}\]"
+  echo -n "\[\e[${1}m\]${2}\[${RST}\]"
 }
 
 git_info() {
