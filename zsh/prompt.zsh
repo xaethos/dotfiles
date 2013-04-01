@@ -2,19 +2,19 @@ autoload colors && colors
 # cheers, @ehrenmurdick
 # http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
 
-GIT="/usr/bin/git"
+GIT=$(which git) || "/usr/bin/git"
 
 git_info() {
-  st=$($GIT status 2>/dev/null | tail -n 1)
-  if [[ $st == "" ]]
+  st=$($GIT status -sb 2>/dev/null | wc -l)
+  if [[ $st -lt 1 ]]
   then
     echo ""
   else
-    if [[ $st == "nothing to commit (working directory clean)" ]]
+    if [[ $st -gt 1 ]]
     then
-      COLOR=green
-    else
       COLOR=red
+    else
+      COLOR=green
     fi
     echo "[%{$fg_bold[$COLOR]%}$(git_branch)%{$reset_color%}$(need_push)]"
   fi
