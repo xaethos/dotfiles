@@ -25,3 +25,5 @@
 [core]
         editor = vim
 
+[push]
+        default = upstream
