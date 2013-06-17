@@ -18,5 +18,11 @@ unset __OLD_PATH
 
 append_path "$HOME/.rvm/bin"
 
+if [ -d $ANDROID_HOME ]
+then
+  append_path "$ANDROID_HOME/tools"
+  append_path "$ANDROID_HOME/platform-tools"
+fi
+
 export PATH=${PATH#:}
 export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
