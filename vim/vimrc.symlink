@@ -2,8 +2,7 @@
 "  Initialize plugins
 " ----------------------------------------------------------------------------
 
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
+source ~/.vim/vundlerc.vim
 
 
 " ----------------------------------------------------------------------------
