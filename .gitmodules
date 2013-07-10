@@ -32,3 +32,6 @@
 [submodule "vim/vim.symlink/bundle/syntastic"]
 	path = vim/vim.symlink/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
+[submodule "vim/vim.symlink/bundle/vroom"]
+	path = vim/vim.symlink/bundle/vroom
+	url = git://github.com/skalnik/vim-vroom.git
