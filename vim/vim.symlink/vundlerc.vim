@@ -14,6 +14,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'skalnik/vim-vroom'
 Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
 
 " Languages / filetypes
 Bundle 'kchmck/vim-coffee-script'
