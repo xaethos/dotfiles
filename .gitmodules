@@ -35,3 +35,6 @@
 [submodule "vim/vim.symlink/bundle/vroom"]
 	path = vim/vim.symlink/bundle/vroom
 	url = git://github.com/skalnik/vim-vroom.git
+[submodule "vim/vim.symlink/bundle/vundle"]
+	path = vim/vim.symlink/bundle/vundle
+	url = https://github.com/gmarik/vundle.git
