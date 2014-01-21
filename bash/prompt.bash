@@ -51,13 +51,25 @@ __user_name(){
   colorize $color $USER
 }
 
-__host_name(){
-  colorize 'fg_mag' $HOSTNAME
-}
+if [ $(uname -s) = "Linux" ] 
+then
+  __host_name(){
+    colorize 'fg_mag' '\h'
+  }
 
-__directory_name(){
-  colorize 'bold fg_cyn' "$(basename "$PWD")"
-}
+  __directory_name(){
+    colorize 'bold fg_cyn' '\w'
+  }
+else
+  __host_name(){
+    colorize 'fg_mag' $HOSTNAME
+  }
+
+  __directory_name(){
+    colorize 'bold fg_cyn' "$(basename "$PWD")"
+  }
+fi
+
 __prompt_cmd() {
   export PS1="$(__user_name)@$(__host_name):$(__directory_name) $(__git_info)\$ "
 }
