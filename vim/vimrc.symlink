@@ -35,8 +35,8 @@ set virtualedit=block      " allow virtual edit in visual block ..
 "  Keymapping
 " ----------------------------------------------------------------------------
 
-let mapleader = ","        " lead with ,
-nmap <C-\> :NERDTreeFind<CR>
+nmap <Leader>t :NERDTreeToggle<CR>
+nmap <Leader><C-t> :NERDTreeFind<CR>
 nmap ]q :cnext<CR>
 nmap [q :cprevious<CR>
 nmap ]l :lnext<CR>
