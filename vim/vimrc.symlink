@@ -9,8 +9,8 @@ source ~/.vim/vundlerc.vim
 "  Autosave instead of swapfile
 " ----------------------------------------------------------------------------
 
-set noswapfile
-autocmd BufLeave,FocusLost * silent! :write
+"noswapfile set
+"autocmd BufLeave,FocusLost * silent! :write
 
 
 " ----------------------------------------------------------------------------
