@@ -35,14 +35,14 @@ set virtualedit=block      " allow virtual edit in visual block ..
 "  Keymapping
 " ----------------------------------------------------------------------------
 
-nmap <Leader>t :NERDTreeToggle<CR>
-nmap <Leader><C-t> :NERDTreeFind<CR>
-nmap ]q :cnext<CR>
-nmap [q :cprevious<CR>
-nmap ]l :lnext<CR>
-nmap [l :lprevious<CR>
-nmap ]b :bnext<CR>
-nmap [b :bprevious<CR>
+nnoremap gt :NERDTreeToggle<CR>
+nnoremap gT :NERDTreeFind<CR>
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprevious<CR>
+nnoremap ]l :lnext<CR>
+nnoremap [l :lprevious<CR>
+nnoremap ]b :bnext<CR>
+nnoremap [b :bprevious<CR>
 
 
 " ----------------------------------------------------------------------------
@@ -81,7 +81,7 @@ set list listchars=tab:»\ ,trail:·
 function! StripWhitespace ()
     exec ':%s/\s\+$//gc'
 endfunction
-map <Leader>s :call StripWhitespace ()<CR>
+nnoremap <Leader>s :call StripWhitespace ()<CR>
 
 
 " ---------------------------------------------------------------------------
