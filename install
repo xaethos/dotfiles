@@ -1,3 +1,5 @@
+#!/bin/sh
+
 for SOURCE in $(find . -not -path '*/\.*' -iname '*.symlink')
 do
   DEST="$HOME/.$(basename "${SOURCE%.symlink}")"
