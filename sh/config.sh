@@ -1,5 +1,6 @@
-export LSCOLORS="exfxcxdxbxegedabagacad"
-export CLICOLOR=true
+export CLICOLOR=1
+#export LSCOLORS="exfxcxdxbxegedabagacad" #Clear background
+export LSCOLORS="gxBxhxDxfxhxhxhxhxcxcx" #Dark background
 
 export EDITOR=vi
 export VISUAL=vi
