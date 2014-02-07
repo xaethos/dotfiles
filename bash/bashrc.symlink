@@ -11,7 +11,7 @@ then
 fi
 
 # source every .sh and .bash file in this rep
-for config_file in $(find "$DOTHOME/" -regex '.*\.\(ba\)?sh$')
+for config_file in $(find "$DOTHOME/" -regex '.*\.\(ba\)*sh$')
 do
   source $config_file
 done
