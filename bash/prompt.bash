@@ -1,4 +1,4 @@
-GIT="/usr/bin/git"
+GIT=$(which git)
 
 __git_info() {
   local st
