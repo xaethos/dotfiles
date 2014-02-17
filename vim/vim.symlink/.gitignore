@@ -1,0 +1,3 @@
+# Ignore Eclim plugin, as it is machine dependant
+plugin/eclim.vim
+eclim/
