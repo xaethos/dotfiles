@@ -119,3 +119,8 @@ filetype plugin indent on
 set exrc            " enable per-directory .vimrc files
 set secure          " disable unsafe commands in local .vimrc files
 
+" ---------------------------------------------------------------------------
+"  CtrlP
+" ---------------------------------------------------------------------------
+
+let g:ctrlp_working_path_mode = 'a'
