@@ -53,3 +53,11 @@ bind m \
     set -g mouse-select-window off \;\
     display 'Mouse: OFF'
 
+# Status bar
+
+set-option -g status-fg black
+set-option -g status-bg green
+set-option -g status-attr default
+set-window-option -g window-status-attr dim
+set-window-option -g window-status-current-bg cyan
+set-window-option -g window-status-current-attr bright
