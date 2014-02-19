@@ -17,6 +17,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'tpope/vim-dispatch'
 
 " Languages / filetypes
 Bundle 'kchmck/vim-coffee-script'
