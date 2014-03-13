@@ -1,7 +1,18 @@
-colorscheme desert
+let g:solarized_termtrans=1
+set background=light
+colorscheme solarized
+
 set anti
-set lines=999 columns=84
-set guioptions=egmrt
+set guioptions+=e
+set guioptions+=g
+set guioptions+=i
+set guioptions+=m
+set guioptions+=r
+set guioptions+=L
+set guioptions-=t
+set guioptions+=T
+" "egmrLtT"   (MS-Windows),
+" "aegimrLtT" (GTK, Motif and Athena))
 
 " C-TAB and C-SHIFT-TAB cycle tabs forward and backward
 nmap <c-tab> :tabnext<cr>

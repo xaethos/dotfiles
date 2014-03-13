@@ -36,7 +36,7 @@ set virtualedit=block      " allow virtual edit in visual block ..
 " ----------------------------------------------------------------------------
 
 nnoremap gt :NERDTreeToggle<CR>
-nnoremap gT :NERDTreeFind<CR>
+nnoremap g<c-t> :NERDTreeFind<CR>
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprevious<CR>
 nnoremap ]l :lnext<CR>
