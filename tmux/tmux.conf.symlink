@@ -54,10 +54,11 @@ bind m \
     display 'Mouse: OFF'
 
 # Status bar
-
 set-option -g status-fg black
 set-option -g status-bg green
 set-option -g status-attr default
 set-window-option -g window-status-attr dim
 set-window-option -g window-status-current-bg cyan
 set-window-option -g window-status-current-attr bright
+status-right -g "\"#41T\" %H:%M %Y-%m-%d"
+status-right-length -g 60
