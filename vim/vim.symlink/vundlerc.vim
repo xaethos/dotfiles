@@ -26,6 +26,7 @@ Bundle 'hallison/vim-markdown'
 Bundle 'othree/xml.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'jdevera/vim-protobuf-syntax'
 
 filetype plugin indent on     " required!
 "
