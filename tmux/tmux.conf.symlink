@@ -57,7 +57,7 @@ bind m \
 set-option -g status-fg black
 set-option -g status-bg green
 set-option -g status-attr default
-set-option -g status-right "\"#41T\" %H:%M %Y-%m-%d"
+set-option -g status-right '#[bold]#42T #[default]|%H:%M %Y-%m-%d'
 set-option -g status-right-length 60
 set-window-option -g window-status-attr dim
 set-window-option -g window-status-current-bg cyan
