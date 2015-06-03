@@ -4,26 +4,30 @@
 # Also search in this file for FIXME- you'll want to well, fix them.
 
 [user]
-        name = Diego García
-        email = xaethos@gmail.com
+    name = Diego García
+    email = xaethos@gmail.com
 
 [alias]
-        co = checkout
-        count = !git shortlog -sn
-        st = status -sb
-        tree = log --graph --format='%C(black yellow)%h%Creset%C(green)% s%C(cyan)%d%n        %ai -- %an' --all
+    co = checkout
+    count = !git shortlog -sn
+    st = status -sb
+    tree = log --graph --format='%C(black yellow)%h%Creset%C(green)% s%C(cyan)%d%n        %ai -- %an' --all
+    root = rev-parse --show-toplevel
 
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
 
 [core]
-        editor = vim
+    editor = vim
 
 [push]
-        default = simple
+    default = simple
 
 [merge]
-        tool = vimdiff
+    tool = vimdiff
+
+[rebase]
+    autosquash = true
