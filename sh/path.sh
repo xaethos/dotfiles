@@ -31,6 +31,12 @@ unset __OLD_PATH
 ## RVM
 #append_path "$HOME/.rvm/bin"
 
+## Go
+if [ -d $GOPATH ]
+then
+  append_path "$GOPATH/bin"
+fi
+
 ## Android
 if [ -d $ANDROID_HOME ]
 then
