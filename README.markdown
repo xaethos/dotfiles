@@ -8,12 +8,18 @@ Make sure you have created `$HOME/workspace`. Additionally, if you have the
 following in your system, add the corresponding lines to `.prelocalrc`
 
 ### [Homebrew](http://brew.sh/)
-Homebrew likes taking over `/usr/local`, which I don't like, so running their
-usual installation script is not the way to go. Modify the script to install to
-`/usr/local/homebrew`, then add to `.prelocalrc`:
+Homebrew likes making `/usr/local` into a git repo, which I don't like, so
+running their usual installation script is not the way to go. Modify the script
+to install to `/usr/local/homebrew`, then add to `.prelocalrc`:
 
 ```sh
 export HOMEBREW_PREFIX="/usr/local/homebrew"
+```
+
+While you're at it, here're some brews you prolly want:
+
+```sh
+brew install node python go
 ```
 
 ### Android SDK
