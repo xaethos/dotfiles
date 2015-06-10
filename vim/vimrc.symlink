@@ -95,7 +95,7 @@ set hlsearch               " highlight searches
 "  Open current file in Chrome
 " ---------------------------------------------------------------------------
 
-command Chrome :!open -a "Google Chrome" %
+command Chrome :!open -a "Google Chrome" "%"
 
 
 " ---------------------------------------------------------------------------
