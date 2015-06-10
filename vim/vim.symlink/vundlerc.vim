@@ -18,8 +18,10 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-commentary'
 
 " Languages / filetypes
+Bundle 'wookiehangover/jshint.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'helino/vim-json'
 Bundle 'hallison/vim-markdown'
