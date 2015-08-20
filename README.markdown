@@ -62,7 +62,7 @@ git submodule update --init
 
 ```sh
 cd ~/.dotfiles
-script/install
+./install
 ```
 
 - Install Vundle plugins
