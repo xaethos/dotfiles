@@ -13,6 +13,7 @@
     st = status -sb
     tree = log --graph --format='%C(black yellow)%h%Creset%C(green)% s%C(cyan)%d%n        %ai -- %an' --all
     root = rev-parse --show-toplevel
+    fetch-ff = !"git fetch --all --prune; eval $(git for-each-ref refs/heads --shell --format='if [ -n %(upstream) ]; then git co %(refname:short); git merge --ff-only %(upstream:short); fi;');"
 
 [color]
     diff = auto
