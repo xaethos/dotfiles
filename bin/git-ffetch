@@ -1,0 +1,36 @@
+#!/bin/bash
+
+_merge_ff() {
+  BRANCH="$1"
+  UPSTREAM="$2"
+  BRANCH_HASH="$(git show-ref -s --verify refs/heads/$BRANCH 2>/dev/null)"
+  UPSTREAM_HASH="$(git rev-parse --verify $UPSTREAM 2> /dev/null)"
+
+  echo "$BRANCH[${BRANCH_HASH:0:7}]..$UPSTREAM[${UPSTREAM_HASH:0:7}]"
+  if [ "$(git symbolic-ref HEAD)" = "refs/heads/$BRANCH" ]
+  then
+    # Index ends up messy if we `update-ref` the current branch
+    git merge $quiet --ff-only "$UPSTREAM"
+  else
+    if [ "$(git merge-base $BRANCH_HASH $UPSTREAM_HASH)" != "$BRANCH_HASH" ]
+    then
+      echo "$BRANCH cannot be fast-forwarded" 1>&2
+    else
+      git update-ref -m "merge $UPSTREAM: Fast forward" "refs/heads/$BRANCH" "$UPSTREAM_HASH" "$BRANCH_HASH"
+      if [ $? -ne 0 ]
+      then
+          echo "Error: fast forward using update-ref failed" 1>&2
+      fi
+    fi
+  fi
+}
+
+git fetch --all --prune
+for BRANCH in $(git for-each-ref refs/heads --format='%(refname:short)')
+do
+  UPSTREAM=$(git rev-parse --verify --abbrev-ref=strict "$BRANCH@{upstream}" 2>/dev/null)
+  if [ -n "$UPSTREAM" ]
+  then
+    _merge_ff "$BRANCH" "$UPSTREAM"
+  fi
+done
