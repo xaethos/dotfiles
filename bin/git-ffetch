@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# git ffetch: fast-forward fetch
+# fetchs (and prunes) from all remotes, and then fast-forwards all branches
+# to their upstreams. If a branch can't be fast-forwarded, it is left
+# untouched.
 
 _merge_ff() {
   BRANCH="$1"
