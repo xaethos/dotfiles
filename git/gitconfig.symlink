@@ -13,6 +13,7 @@
     st = status -sb
     tree = log --graph --format='%C(black yellow)%h%Creset%C(green)% s%C(cyan)%d%n        %ai -- %an' --all
     root = rev-parse --show-toplevel
+    wip = commit -m 'WIP' -m '[no-pt-story]' -m '[ci skip]'
 
 [color]
     diff = auto
