@@ -1,0 +1,10 @@
+.VimballRecord
+
+# Ignore Eclim plugin, as it is machine dependant
+plugin/eclim.vim
+eclim/
+
+# Ignore plugin bundles
+bundle/
+vundle.git/git
+plugins/
