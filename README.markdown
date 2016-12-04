@@ -19,7 +19,7 @@ export HOMEBREW_PREFIX="/usr/local/homebrew"
 While you're at it, here're some brews you prolly want:
 
 ```sh
-brew install node python go
+brew install node python go neovim/neovim/neovim
 ```
 
 ### Android SDK
