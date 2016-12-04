@@ -37,31 +37,25 @@ export GOPATH="$HOME/workspace/golang"
 
 Install
 -------
-- Clone the repo somewhere.
+- Clone the repo to `~/.config`.
 
 ```sh
-git clone git@github.com:xaethos/dotfiles.git ~/workspace/dotfiles
-```
-
-- Link directory, if needed
-
-```sh
-ln -s workspace/dotfiles ~/.dotfiles
+git clone git@github.com:xaethos/dotfiles.git ~/.config
 ```
 
 - Get git submodules
 
 ```sh
-cd ~/.dotfiles
+cd ~/.config
 git submodule update --init
 ```
 
 - Run install script.
-  This will symlink the appropriate files in `.dotfiles` to your home directory.
-  Everything is configured and tweaked within `~/.dotfiles`, though.
+  This will symlink the appropriate files in `.config` to your home directory.
+  Everything is configured and tweaked within `~/.config`, though.
 
 ```sh
-cd ~/.dotfiles
+cd ~/.config
 ./install
 ```
 

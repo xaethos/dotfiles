@@ -1,4 +1,4 @@
-alias reload!='. ~/.bashrc'
+alias reload!='. ~/.bash_profile'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
