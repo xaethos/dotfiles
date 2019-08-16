@@ -13,6 +13,7 @@ PATH=""
 append_path "/usr/local/bin"
 append_path "/usr/local/sbin"
 append_path "$HOME/bin"
+append_path "$HOME/.local/bin"
 append_path "$DOTHOME/bin"
 
 ## Homebrew
