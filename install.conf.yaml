@@ -1,0 +1,40 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- create:
+  - ~/workspace
+  - ~/workspace/golang
+
+- link:
+    ~/.profile:
+    ~/.dircolors:
+    ~/.bashrc:
+    ~/.gitconfig:
+    ~/.tmux.conf:
+
+# Vim
+- create: [~/.vim]
+- clean: [~/.vim]
+
+- link:
+    ~/.vimrc: vim/vimrc.vim
+    ~/.gvimrc: vim/gvimrc.vim
+    ~/.vim/colors: vim/colors
+    ~/.vim/ftplugin: vim/ftplugin
+    ~/.vim/filetype.vim: vim/filetype.vim
+    ~/.vim/vundlerc.vim: vim/vundlerc.vim
+
+#- shell: [vim -c ':BundleInstall']
+
+# Neovim
+- create: [~/.config/nvim]
+- clean: [~/.config/nvim]
+
+- link:
+    ~/.config/nvim/init.vim: vim/nvimrc.vim
+    ~/.config/nvim/colors: vim/colors
+    ~/.config/nvim/ftplugin: vim/ftplugin
+    ~/.config/nvim/filetype.vim: vim/filetype.vim

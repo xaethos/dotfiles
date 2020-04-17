@@ -2,25 +2,18 @@ Xae's dotfiles
 ==============
 Xaethos's own dotfiles: ever changing.
 
+Quickstart
+----------
+Now using [Dotbot](https://github.com/anishathalye/dotbot)!
+
+1. git clone git@github.com:xaethos/dotfiles.git ~/dotfiles
+2. cd ~/dotfiles
+3. ./install
+
 Setup checklist
 ---------------
-Make sure you have created `$HOME/workspace`. Additionally, if you have the
-following in your system, add the corresponding lines to `.prelocalrc`
-
-### [Homebrew](http://brew.sh/)
-Homebrew likes making `/usr/local` into a git repo, which I don't like, so
-running their usual installation script is not the way to go. Modify the script
-to install to `/usr/local/homebrew`, then add to `.prelocalrc`:
-
-```sh
-export HOMEBREW_PREFIX="/usr/local/homebrew"
-```
-
-While you're at it, here're some brews you prolly want:
-
-```sh
-brew install node python go neovim/neovim/neovim
-```
+If you have the following in your system, add the corresponding lines to
+`.prelocalrc`
 
 ### Android SDK
 
@@ -28,60 +21,8 @@ brew install node python go neovim/neovim/neovim
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 ```
 
-### Go lang
-Make sure you've created the dirctory
-
-```sh
-export GOPATH="$HOME/workspace/golang"
-```
-
-Install
--------
-- Clone the repo to `~/.config`.
-
-```sh
-git clone git@github.com:xaethos/dotfiles.git ~/.config
-```
-
-- Get git submodules
-
-```sh
-cd ~/.config
-git submodule update --init
-```
-
-- Run install script.
-  This will symlink the appropriate files in `.config` to your home directory.
-  Everything is configured and tweaked within `~/.config`, though.
-
-```sh
-cd ~/.config
-./install
-```
-
-- Install Vundle plugins
-
-```sh
-vim -c ':BundleInstall'
-```
-
-Components
-----------
-There's a few special files in the hierarchy.
-
-- **bin/**: Anything in `bin/` will get added to your `$PATH` and be made
-  available everywhere.
-- **topic/\*.zsh**: Any files ending in `.zsh` get loaded into your
-  environment.
-- **topic/\*.symlink**: Any files ending in `*.symlink` get symlinked into
-  your `$HOME`. This is so you can keep all of those versioned in your dotfiles
-  but still keep those autoloaded files in your home directory. These get
-  symlinked in when you run `rake install`.
-- **topic/\*.completion.sh**: Any files ending in `completion.sh` get loaded
-  last so that they get loaded after we set up zsh autocomplete functions.
-
 Thanks
 ------
-I forked [Zach Holman's dotfiles](https://github.com/holman/dotfiles). Much of
-the structure of my dotfiles are product of his, even though my setup has
-differed over time.
+- [Zach Holman's dotfiles](https://github.com/holman/dotfiles)
+- [dotfiles.github.io](https://dotfiles.github.io/)
+- [Dotbot](https://github.com/anishathalye/dotbot)

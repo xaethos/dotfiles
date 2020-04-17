@@ -1,51 +1,73 @@
 if &compatible
-  set nocompatible
+  set nocompatible               " Be iMproved
 endif
-set runtimepath^=~/.config/nvim/plugins/repos/github.com/Shougo/dein.vim
 
 runtime! custom_preconfig/*.vim
 runtime! common_config/*.vim
 runtime! custom_config/*.vim
 
-call dein#begin('~/.config/nvim/plugins')
+"dein Scripts-----------------------------
 
-call dein#add('Shougo/dein.vim')
+" Required:
+set runtimepath+=/home/xaethos/.cache/dein/repos/github.com/Shougo/dein.vim
 
-" Utilities
-call dein#add('Lokaltog/vim-easymotion')
-call dein#add('Shougo/deoplete.nvim')
-call dein#add('kien/ctrlp.vim')
-call dein#add('nelstrom/vim-visual-star-search')
-call dein#add('scrooloose/nerdtree')
-call dein#add('scrooloose/syntastic')
-call dein#add('skalnik/vim-vroom')
-call dein#add('tpope/vim-commentary')
-call dein#add('tpope/vim-fugitive')
+" Required:
+if dein#load_state('/home/xaethos/.cache/dein')
+  call dein#begin('/home/xaethos/.cache/dein')
 
-" Go
-call dein#add("fatih/vim-go")
-call dein#add("nsf/gocode")
-call dein#add('zchee/deoplete-go')
+  " Let dein manage dein
+  " Required:
+  call dein#add('/home/xaethos/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-" Typescript
-"call dein#add('leafgarland/typescript-vim')
-call dein#add('HerringtonDarkholme/yats.vim')
-"call dein#add('Shougo/vimproc.vim', {'build': 'make'}) 
-"call dein#add('Quramy/tsuquyomi') 
-"call dein#add('mhartington/deoplete-typescript')
+  " Colorschemes
+  call dein#add('fenetikm/falcon')
+  call dein#add('joshdick/onedark.vim')
+  call dein#add('challenger-deep-theme/vim')
 
-call dein#end()
+  " Utilities
+  call dein#add('Lokaltog/vim-easymotion')
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('kien/ctrlp.vim')
+  call dein#add('nelstrom/vim-visual-star-search')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('scrooloose/syntastic')
+  call dein#add('skalnik/vim-vroom')
+  call dein#add('tpope/vim-commentary')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('prabirshrestha/async.vim')
+  call dein#add('prabirshrestha/vim-lsp')
 
+  " Go
+  call dein#add("fatih/vim-go")
+  call dein#add("nsf/gocode")
+  call dein#add('zchee/deoplete-go')
+
+  " Typescript
+  call dein#add('HerringtonDarkholme/yats.vim')
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+"End dein Scripts-------------------------
+
+filetype plugin indent on
+syntax enable
+
+" Install not installed plugins on startup.
 if dein#check_install()
   call dein#install()
 endif
 
-filetype plugin indent on
-colorscheme solarized
-set background=dark
+if (has("termguicolors"))
+  set termguicolors
+endif
+colorscheme onedark
+"set background=dark
 
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
+" Use deoplete?
+let g:deoplete#enable_at_startup = 0
 
 " ----------------------------------------------------------------------------
 "  Text Formatting

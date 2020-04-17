@@ -1,4 +1,5 @@
 function append_path() {
+  # Append the paramater only if it is a directory
   if [ -d $1 ]
   then
     PATH="$PATH:$1"
