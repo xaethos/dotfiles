@@ -9,6 +9,7 @@
   - ~/workspace/golang
 
 - link:
+    ~/.dotfiles: ''
     ~/.profile:
     ~/.dircolors:
     ~/.bashrc:

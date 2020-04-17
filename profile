@@ -8,16 +8,15 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+DOTHOME="$HOME/.dotfiles"
+
 if [ -n "$BASH_VERSION" ]
-then # just source .bashrc
-  if [ -f "$HOME/.bashrc" ]; then
-    . "$HOME/.bashrc"
-  fi
-
-else # just load a minimal config
-  if [[ -a $HOME/.prelocalrc ]]
-  then
-    source $HOME/.prelocalrc
-  fi
-
+then
+  . "$DOTHOME/bashrc"
+else
+  # Just load a generic config
+  [ -a "$HOME/.prelocalrc" ] && . "$HOME/.prelocalrc"
+  . "$DOTHOME/sh/config.sh"
+  . "$DOTHOME/sh/path.sh"
+  [ -a "$HOME/.localrc" ] && . "$HOME/.localrc"
 fi
