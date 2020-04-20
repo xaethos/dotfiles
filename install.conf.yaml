@@ -31,11 +31,18 @@
 #- shell: [vim -c ':BundleInstall']
 
 # Neovim
-- create: [~/.config/nvim]
-- clean: [~/.config/nvim]
+- create:
+  - ~/.config/nvim
+  - ~/.cache/dein/repos/github.com/Shougo/dein.vim
+
+- clean:
+  - ~/.config/nvim
 
 - link:
     ~/.config/nvim/init.vim: vim/nvimrc.vim
     ~/.config/nvim/colors: vim/colors
     ~/.config/nvim/ftplugin: vim/ftplugin
     ~/.config/nvim/filetype.vim: vim/filetype.vim
+
+- shell:
+  - git rev-parse --resolve-git-dir ~/.cache/dein/repos/github.com/Shougo/dein.vim/.git || git clone https://github.com/Shougo/dein.vim ~/.cache/dein/repos/github.com/Shougo/dein.vim

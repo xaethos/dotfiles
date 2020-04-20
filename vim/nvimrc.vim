@@ -7,17 +7,19 @@ runtime! common_config/*.vim
 runtime! custom_config/*.vim
 
 "dein Scripts-----------------------------
+let b:dein_cache = $HOME . '/.cache/dein'
+let b:dein_plugin = b:dein_cache . '/repos/github.com/Shougo/dein.vim'
 
 " Required:
-set runtimepath+=/home/xaethos/.cache/dein/repos/github.com/Shougo/dein.vim
+execute 'set runtimepath+=' . b:dein_plugin
 
 " Required:
-if dein#load_state('/home/xaethos/.cache/dein')
-  call dein#begin('/home/xaethos/.cache/dein')
+if dein#load_state(b:dein_cache)
+  call dein#begin(b:dein_plugin)
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/xaethos/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add(b:dein_plugin)
 
   " Colorschemes
   call dein#add('fenetikm/falcon')
