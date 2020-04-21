@@ -6,9 +6,8 @@ Quickstart
 ----------
 Now using [Dotbot](https://github.com/anishathalye/dotbot)!
 
-1. git clone git@github.com:xaethos/dotfiles.git ~/dotfiles
-2. cd ~/dotfiles
-3. ./install
+1. git clone https://github.com/xaethos/dotfiles.git ~/dotfiles
+2. ~/dotfiles/install
 
 Setup checklist
 ---------------
