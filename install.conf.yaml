@@ -13,6 +13,7 @@
     ~/.profile:
     ~/.dircolors:
     ~/.bashrc:
+    ~/.Xresources:
     ~/.gitconfig:
     ~/.tmux.conf:
 

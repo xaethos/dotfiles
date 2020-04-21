@@ -1,0 +1,53 @@
+! display DPI [Acer B286HK: 138][MacBook Pro: 220][GRD: 110][X1: 130]
+Xft.dpi: 144
+
+! text autohinting
+Xft.autohint: 0
+
+! one of: lcddefault, lcdlight, lcdlegacy, lcdnone
+Xft.lcdfilter: lcddefault
+
+! text hinting style, one of: hintnone, hintslight, hintmedium, hintfull
+Xft.hintstyle: hintfull
+
+! text hinting
+Xft.hinting: 1
+
+! text antialiasing
+Xft.antialias: 1
+
+! text subpixel rendering, one of: none, rgb, bgr, vrgb, vbgr
+Xft.rgba: rgb
+
+XTerm.termName: xterm-256color
+XTerm.vt100.saveLines: 4096
+XTerm.vt100.faceName: monospace:size=9:antialias=true
+!XTerm.vt100.reverseVideo: true
+XTerm.vt100.foreground: #b4b4b9
+XTerm.vt100.background: #020221
+! The 16 terminal colors. There are 8 basic colors, each with a bright variant.
+! black
+XTerm.vt100.color0:  #000004
+XTerm.vt100.color8:  #020221
+! red
+XTerm.vt100.color1:  #ff3600
+XTerm.vt100.color9:  #ff8e78
+! green
+XTerm.vt100.color2:  #718e3f
+XTerm.vt100.color10: #b1bf75
+! yellow
+XTerm.vt100.color3:  #ffc552
+XTerm.vt100.color11: #ffd392
+! blue (purple and blue!)
+XTerm.vt100.color4:  #635196
+XTerm.vt100.color12: #99a4bc
+! magenta (orange)
+XTerm.vt100.color5:  #ff761a
+XTerm.vt100.color13: #ffb07b
+! cyan
+XTerm.vt100.color6:  #34bfa4
+XTerm.vt100.color14: #8bccbf
+! white
+XTerm.vt100.color7:  #b4b4b9
+XTerm.vt100.color15: #f8f8ff
+
