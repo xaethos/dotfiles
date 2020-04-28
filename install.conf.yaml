@@ -21,6 +21,7 @@
     ~/.tmux.conf:
     ~/.config/i3: 'i3'
     ~/.config/i3status: 'i3status'
+    ~/.config/dunst/dunstrc: 'dunstrc'
 
 # Vim
 - create: [~/.vim]
