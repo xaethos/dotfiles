@@ -1,3 +1,6 @@
+# Apt packages to install manually (until automated):
+# neovim i3 i3status i3lock xautolock xss-lock rofi dex xbacklight
+
 - defaults:
     link:
       relink: true
@@ -16,6 +19,8 @@
     ~/.Xresources:
     ~/.gitconfig:
     ~/.tmux.conf:
+    ~/.config/i3: 'i3'
+    ~/.config/i3status: 'i3status'
 
 # Vim
 - create: [~/.vim]

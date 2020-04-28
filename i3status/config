@@ -1,0 +1,88 @@
+general {
+  colors = true
+  interval = 5
+}
+
+order += "ipv6"
+order += "wireless _first_"
+order += "ethernet _first_"
+
+order += "memory"
+
+order += "battery all"
+order += "volume pulse"
+
+order += "tztime mtv"
+order += "tztime cl"
+order += "tztime at"
+order += "tztime hyd"
+order += "tztime sg"
+
+order += "time"
+
+wireless _first_ {
+  format_up = "%essid 📶%quality %ip %bitrate"
+  format_down = "📶down"
+}
+
+ethernet _first_ {
+  format_up = "🖧%ip %speed"
+  format_down = "🖧down"
+}
+
+battery all {
+  format = "%status %percentage %remaining"
+  format_down = "No battery"
+  status_chr = "🔌"
+  status_bat = "🔋"
+  status_unk = "❓"
+  status_full = "⚡"
+  low_threshold = 15
+  threshold_type = percentage
+  integer_battery_capacity = true
+}
+
+
+volume pulse {
+  device = "pulse"
+}
+
+tztime sg {
+        format = "SG %H:%M"
+        timezone = "Asia/Singapore"
+        hide_if_equals_localtime = true
+}
+
+tztime mtv {
+        format = "MTV %H:%M"
+        timezone = "America/Los_Angeles"
+        hide_if_equals_localtime = true
+}
+
+tztime at {
+        format = "AT %H:%M"
+        timezone = "Europe/Vienna"
+        hide_if_equals_localtime = true
+}
+
+tztime cl {
+        format = "CL %H:%M"
+        timezone = "America/Santiago"
+        hide_if_equals_localtime = true
+}
+
+tztime hyd {
+        format = "HYD %H:%M"
+        timezone = "Asia/Calcutta"
+        hide_if_equals_localtime = true
+}
+
+memory {
+        format = "M: %used"
+        threshold_degraded = "10%"
+        format_degraded = "M! %free"
+}
+
+read_file uptime {
+        path = "/proc/uptime"
+}
