@@ -21,7 +21,7 @@ Xft.rgba: rgb
 
 XTerm.termName: xterm-256color
 XTerm.vt100.saveLines: 4096
-XTerm.vt100.faceName: Nimbus Mono L:size=9:antialias=true
+XTerm.vt100.faceName: Hack:size=9:antialias=true
 XTerm*vt100.translations: #override \
   Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
   Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
