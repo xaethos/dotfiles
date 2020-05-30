@@ -172,7 +172,7 @@ bar {
 
 # Screen locking
 bindsym $mod+o exec i3lock -c 222244  # Win-o to lock
-exec --no-startup-id xautolock -time 5 -locker 'i3lock -c 222244'
+exec --no-startup-id xautolock -time 5 -locker 'i3lock -c 222244' -corners 00--
 exec --no-startup-id xss-lock -l -- i3lock -c 222244  # upon suspend
 
 # Startup items
@@ -184,6 +184,7 @@ for_window [class="Emulator"] floating enable
 for_window [class="^google-chrome$"] border none                                
 for_window [class="Arandr"] floating enable                                     
 for_window [class="Nemo"] floating enable                                       
+for_window [class="vlc"] floating enable
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && killall -SIGUSR1 i3status
@@ -192,11 +193,20 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && killall -SIGUSR1 i3status
 
 # Backlight keys                                                                
-bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/xbacklight -dec 5
-bindsym XF86MonBrightnessUp exec --no-startup-id /usr/bin/xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/xbacklight -dec 10 -steps 1 -time 0
+bindsym XF86MonBrightnessUp exec --no-startup-id /usr/bin/xbacklight -inc 10 -steps 1 -time 0
+bindsym Shift+XF86MonBrightnessDown exec --no-startup-id /usr/bin/xbacklight -dec 1 -steps 1 -time 0
+bindsym Shift+XF86MonBrightnessUp exec --no-startup-id /usr/bin/xbacklight -inc 1 -steps 1 -time 0
 
 # Media player controls
 bindsym XF86AudioPlay exec --no-startup-id playerctl play
 bindsym XF86AudioPause exec --no-startup-id playerctl pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# etc...
+bindsym XF86Display exec arandr
+# XF86WLAN
+# XF86Tools
+# XF86Bluetooth
+# XF86Favorites

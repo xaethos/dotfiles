@@ -1,5 +1,6 @@
 # Apt packages to install manually (until automated):
 # neovim i3 i3status i3lock xautolock xss-lock rofi dex xbacklight fonts-hack
+# arandr
 
 - defaults:
     link:
