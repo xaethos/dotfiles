@@ -1,5 +1,6 @@
-! display DPI [Acer B286HK: 138][MacBook Pro: 220][GRD: 110][X1: 130]
-Xft.dpi: 144
+! display DPI
+! [Acer B286HK: 138][MacBook Pro: 220][GRD: 110][X1: 130][ThinkVision: 96]
+!Xft.dpi: 220
 
 ! text autohinting
 Xft.autohint: 0
@@ -21,7 +22,7 @@ Xft.rgba: rgb
 
 XTerm.termName: xterm-256color
 XTerm.vt100.saveLines: 4096
-XTerm.vt100.faceName: Hack:size=9:antialias=true
+XTerm.vt100.faceName: Hack:size=11:antialias=true
 XTerm*vt100.translations: #override \
   Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
   Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
