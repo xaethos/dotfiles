@@ -1,7 +1,8 @@
 # Apt packages to install manually (until automated):
 # neovim i3 i3status i3lock xautolock xss-lock rofi dex xbacklight fonts-hack
-# arandr pavucontrol
+# arandr autorandr nitrogen pavucontrol
 # sway swayidle swaylock wofi
+# cifs-utils nfs-common
 
 - defaults:
     link:

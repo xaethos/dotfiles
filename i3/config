@@ -180,6 +180,7 @@ exec --no-startup-id xss-lock -l -- i3lock -c 222244  # upon suspend
 
 # Startup items
 exec --no-startup-id dex -ae i3
+exec --no-startup-id nitrogen --restore
 
 # Special window configuration for apps
 # Find a window class with:
@@ -206,13 +207,13 @@ bindsym Shift+XF86MonBrightnessDown exec --no-startup-id /usr/bin/xbacklight -de
 bindsym Shift+XF86MonBrightnessUp exec --no-startup-id /usr/bin/xbacklight -inc 1 -steps 1 -time 0
 
 # Media player controls
-bindsym XF86AudioPlay exec --no-startup-id playerctl play
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioPause exec --no-startup-id playerctl pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # etc...
-bindsym XF86Display exec xrandr --auto
+bindsym XF86Display exec autorandr --change
 bindsym Shift+XF86Display exec arandr
 # XF86WLAN
 # XF86Tools
